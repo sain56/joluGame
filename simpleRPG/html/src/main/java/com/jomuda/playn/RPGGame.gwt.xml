@@ -1,0 +1,11 @@
+<module rename-to='simpleRPG'>
+  <inherits name='playn.PlayN'/>
+  <inherits name='RPGGameAssets'/>
+
+  <source path='core'/>
+  <source path='html'/>
+
+  <public path="resources" />
+
+  <entry-point class='com.jomuda.playn.html.RPGGameHtml'/>
+</module>
