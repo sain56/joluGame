@@ -11,7 +11,8 @@ public class MenuEntry extends Observable{
 	}
 	
 	public void activate(){
-		super.notifyObservers();
+		setChanged();
+		notifyObservers();
 	}
 
 	public String getLabel() {

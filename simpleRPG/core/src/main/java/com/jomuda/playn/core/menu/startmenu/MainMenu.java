@@ -1,7 +1,6 @@
 package com.jomuda.playn.core.menu.startmenu;
 
 import static playn.core.PlayN.graphics;
-import com.jomuda.playn.core.Keybinding;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -11,12 +10,13 @@ import playn.core.CanvasImage;
 import playn.core.Color;
 import playn.core.GroupLayer;
 import playn.core.ImageLayer;
-import playn.core.Key;
 import playn.core.Keyboard;
 import tripleplay.ui.Interface;
 
-import com.jomuda.playn.core.menu.MenuEntry;
+import com.jomuda.playn.core.Keybinding;
 import com.jomuda.playn.core.Screen;
+import com.jomuda.playn.core.menu.MenuEntry;
+import com.jomuda.playn.core.menu.MenuEntryObserver;
 
 public class MainMenu implements Screen {
 	
@@ -60,12 +60,19 @@ public class MainMenu implements Screen {
 	  
 	  index = 0;
 	  menuEntries = new LinkedList<MenuEntry>();
-          MenuEntry start = new MenuEntry("START");
+          
+	  	  MenuEntry start = new MenuEntry("START");
+	  	start.addObserver(new MenuEntryObserver());
 	    menuEntries.add(start);
-            
-          MenuEntry exit = new MenuEntry("EXIT");
-	    menuEntries.add(exit);
+	    
+	      MenuEntry settings = new MenuEntry("SETTINGS");
+	    menuEntries.add(settings);
+	    
+	      MenuEntry load = new MenuEntry("LOAD");
+	    menuEntries.add(load);
 	  
+	      MenuEntry exit = new MenuEntry("EXIT");
+	    menuEntries.add(exit);
           menuSize = menuEntries.size();
 
 	  for(int i = 0; i < menuSize; i++){
