@@ -9,7 +9,5 @@ public interface Screen {
 
   public void paint(float alpha);
 
-//  public boolean unload();
-
   public void notifyKeyEvent(Keyboard.Event e);
 }
